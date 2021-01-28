@@ -18,7 +18,7 @@ class ViewController: UIViewController, WCSessionDelegate {
     
     
     //Here is the dictionary to be passed to the Watch
-    var watchInAppPurchases = ["Lift": 0, "Watch": 0]
+    var watchInAppPurchases = ["product1": 0, "product2": 0]
     
     
     //This will run, if the connection is successfully completed
