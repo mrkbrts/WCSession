@@ -14,13 +14,12 @@ class InterfaceController: WKInterfaceController, WCSessionDelegate {
     
     //
     func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) {
-        print("watchOS - activationDidCompleteWith", activationState)
+        print("watchOS - activationDidCompleteWith:", activationState)
     }
     
     func session(_ session: WCSession, didReceiveUserInfo userInfo: [String : Any] = [:]) {
         print("watchOS - didReceiveUserInfo", userInfo)
     }
-    
     
     
     override func awake(withContext context: Any?) {
@@ -29,6 +28,11 @@ class InterfaceController: WKInterfaceController, WCSessionDelegate {
     
     override func willActivate() {
         // This method is called when watch view controller is about to be visible to user
+        if WCSession.isSupported() {
+                let session = WCSession.default
+                session.delegate = self
+                session.activate()
+            }
     }
     
     override func didDeactivate() {
