@@ -13,6 +13,9 @@
                     <items>
                         <label width="136" alignment="center" verticalAlignment="center" text="Hello" textAlignment="center" id="vuP-5m-WaQ"/>
                     </items>
+                    <connections>
+                        <outlet property="helloLabel" destination="vuP-5m-WaQ" id="6CY-Ls-BWE"/>
+                    </connections>
                 </controller>
             </objects>
             <point key="canvasLocation" x="220" y="345"/>
