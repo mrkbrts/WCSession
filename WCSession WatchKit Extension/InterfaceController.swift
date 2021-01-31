@@ -11,8 +11,8 @@ import WatchConnectivity
 
 class InterfaceController: WKInterfaceController, WCSessionDelegate {
     
+    private var session: WCSession = .default
     
-    //
     func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) {
         print("watchOS - activationDidCompleteWith:", activationState)
     }
@@ -21,9 +21,19 @@ class InterfaceController: WKInterfaceController, WCSessionDelegate {
         print("watchOS - didReceiveUserInfo", userInfo)
     }
     
+    func session(_ session: WCSession, didReceiveMessage message: [String : Any]) {
+        print("watchOS - didReceiveMessage", message)
+    }
+
+    func session(_ session: WCSession, didReceiveMessage message: [String : Any], replyHandler: @escaping ([String : Any]) -> Void) {
+        replyHandler(["does it work?": "yes sir"])
+        print("watchOS - didReceiveMessage", message)
+    }
     
     override func awake(withContext context: Any?) {
         // Configure interface objects here.
+        session.delegate = self
+        session.activate()
     }
     
     override func willActivate() {

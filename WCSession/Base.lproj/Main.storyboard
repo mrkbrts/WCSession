@@ -24,21 +24,11 @@
                                     <action selector="button:" destination="BYZ-38-t0r" eventType="touchUpInside" id="VnT-35-OKr"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dAc-uN-8Yq">
-                                <rect key="frame" x="61" y="480" width="292" height="41"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
-                                <state key="normal" title="Try again trasnferUserInfo"/>
-                                <connections>
-                                    <action selector="buttonThatWillTryAgain:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cTh-vW-4Jf"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="dxI-MU-dlh" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="38q-ei-Dn3"/>
-                            <constraint firstItem="dAc-uN-8Yq" firstAttribute="top" secondItem="dxI-MU-dlh" secondAttribute="bottom" constant="10" id="L7v-LR-Bl5"/>
-                            <constraint firstItem="dAc-uN-8Yq" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="iP8-68-0f6"/>
                             <constraint firstItem="dxI-MU-dlh" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="wTo-s1-lpe"/>
                         </constraints>
                     </view>

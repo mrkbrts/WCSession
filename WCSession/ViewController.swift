@@ -49,17 +49,21 @@ class ViewController: UIViewController, WCSessionDelegate {
     
     //Pushing this button will attempt iOS-watchOS connection
     @IBAction func button(_ sender: UIButton) {
-        if WCSession.isSupported() {
-                let session = WCSession.default
-                session.delegate = self
-                session.activate()
-            }
+        let session = WCSession.default
+        if session.isReachable {
+            session.sendMessage(dictionaryToPass, replyHandler: { reply in
+                print(reply)
+            }, errorHandler: nil)
+        } else if WCSession.isSupported() {
+            session.delegate = self
+            session.activate()
+        }
     }
     
-    @IBAction func buttonThatWillTryAgain(_ sender: UIButton) {
-        let session = WCSession.default
-        session.transferUserInfo(dictionaryToPass)
-    }
+//    @IBAction func buttonThatWillTryAgain(_ sender: UIButton) {
+//        let session = WCSession.default
+//        session.transferUserInfo(dictionaryToPass)
+//    }
     
     
     
