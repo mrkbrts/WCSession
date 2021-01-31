@@ -17,9 +17,9 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dxI-MU-dlh">
-                                <rect key="frame" x="149.5" y="426" width="115" height="44"/>
+                                <rect key="frame" x="146.5" y="426" width="121" height="44"/>
                                 <fontDescription key="fontDescription" type="system" weight="black" pointSize="26"/>
-                                <state key="normal" title=".activate"/>
+                                <state key="normal" title="Push me!"/>
                                 <connections>
                                     <action selector="button:" destination="BYZ-38-t0r" eventType="touchUpInside" id="VnT-35-OKr"/>
                                 </connections>

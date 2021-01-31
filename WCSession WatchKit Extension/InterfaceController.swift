@@ -28,12 +28,12 @@ class InterfaceController: WKInterfaceController, WCSessionDelegate {
     }
     func session(_ session: WCSession, didReceiveMessage message: [String : Any]) {
         print("watchOS - didReceiveMessage", message)
-        helloLabel.setText("didReceiveMessage 1")
+        helloLabel.setText("didReceiveMessage")
     }
     func session(_ session: WCSession, didReceiveMessage message: [String : Any], replyHandler: @escaping ([String : Any]) -> Void) {
         replyHandler(["does it work?": "yes sir"])
         print("watchOS - didReceiveMessage", message)
-        helloLabel.setText("didReceiveMessage 2")
+        helloLabel.setText("didReceiveMessage")
     }
     
     
