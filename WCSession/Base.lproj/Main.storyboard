@@ -17,17 +17,27 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dxI-MU-dlh">
-                                <rect key="frame" x="134" y="426" width="146" height="44"/>
+                                <rect key="frame" x="97.5" y="426" width="219" height="44"/>
                                 <fontDescription key="fontDescription" type="system" weight="black" pointSize="26"/>
-                                <state key="normal" title="Nyomj meg"/>
+                                <state key="normal" title="transferUserInfo"/>
                                 <connections>
-                                    <action selector="button:" destination="BYZ-38-t0r" eventType="touchUpInside" id="VnT-35-OKr"/>
+                                    <action selector="tuiButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6i5-fz-sUa"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VG5-IL-vq4">
+                                <rect key="frame" x="116" y="480" width="182" height="44"/>
+                                <fontDescription key="fontDescription" type="system" weight="black" pointSize="26"/>
+                                <state key="normal" title="sendMessage"/>
+                                <connections>
+                                    <action selector="sendmButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Tff-jG-bKA"/>
                                 </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="VG5-IL-vq4" firstAttribute="top" secondItem="dxI-MU-dlh" secondAttribute="bottom" constant="10" id="2Vo-w3-1HH"/>
+                            <constraint firstItem="VG5-IL-vq4" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="2uc-al-F9o"/>
                             <constraint firstItem="dxI-MU-dlh" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="38q-ei-Dn3"/>
                             <constraint firstItem="dxI-MU-dlh" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="wTo-s1-lpe"/>
                         </constraints>
