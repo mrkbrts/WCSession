@@ -40,7 +40,6 @@ class InterfaceController: WKInterfaceController, WCSessionDelegate {
     //Setting the Interface Controller as WCSession Delegate
     private var session: WCSession = .default
     override func awake(withContext context: Any?) {
-        // Configure interface objects here.
         session.delegate = self
         session.activate()
     }

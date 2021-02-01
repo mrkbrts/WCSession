@@ -48,10 +48,21 @@ class ViewController: UIViewController, WCSessionDelegate {
     
     
     //Pushing the button on the iOS storyboard will attempt iOS-watchOS connection.
-    @IBAction func button(_ sender: UIButton) {
+    @IBAction func tuiButton(_ sender: UIButton) {
         let session = WCSession.default
         if session.isReachable {
             session.transferUserInfo(dictionaryToPass)
+        } else if WCSession.isSupported() {
+            session.delegate = self
+            session.activate()
+        }
+    }
+    @IBAction func sendmButton(_ sender: UIButton) {
+        let session = WCSession.default
+        if session.isReachable {
+            session.sendMessage(dictionaryToPass, replyHandler: { reply in
+                print(reply)
+            }, errorHandler: nil)
         } else if WCSession.isSupported() {
             session.delegate = self
             session.activate()
