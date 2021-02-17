@@ -14,47 +14,47 @@ class InterfaceController: WKInterfaceController, WCSessionDelegate {
     //The text label on the Watch Storyboard. Helps with debugging.
     @IBOutlet weak var helloLabel: WKInterfaceLabel!
     
+    var wcSession : WCSession!
+    
     
     func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) {
-        print("watchOS - activationDidCompleteWith:", activationState)
     }
     
+    func session(_ session: WCSession, didReceiveApplicationContext applicationContext: [String : Any]) {
+    }
     
-    //Whatever arrives, it will get printed to the console as well as the 'helloLabel' will be changed to help the debugging progress.
-    //BUG: This is the part, that never gets run, even tough the WCSession activated successfully.
     func session(_ session: WCSession, didReceiveUserInfo userInfo: [String : Any] = [:]) {
         print("watchOS - didReceiveUserInfo", userInfo)
-        helloLabel.setText("didReceiveUserInfo")
+        helloLabel.setText("userInfo")
     }
+    
     func session(_ session: WCSession, didReceiveMessage message: [String : Any]) {
-        print("watchOS - didReceiveMessage", message)
-        helloLabel.setText("didReceiveMessage")
+        print("didReceiveMessage", message)
+        let text = message["message"] as! String
+        helloLabel.setText(text)
+        
     }
+    
     func session(_ session: WCSession, didReceiveMessage message: [String : Any], replyHandler: @escaping ([String : Any]) -> Void) {
-        replyHandler(["does it work?": "yes sir"])
-        print("watchOS - didReceiveMessage", message)
-        helloLabel.setText("didReceiveMessage")
     }
     
     
     //Setting the Interface Controller as WCSession Delegate
-    private var session: WCSession = .default
     override func awake(withContext context: Any?) {
-        session.delegate = self
-        session.activate()
+        super.awake(withContext: context)
     }
     
     
     //Activating the session on the watchOS side as well.
     override func willActivate() {
-        if WCSession.isSupported() {
-                let session = WCSession.default
-                session.delegate = self
-                session.activate()
-            }
+        super.willActivate()
+        wcSession = WCSession.default
+        wcSession.delegate = self
+        wcSession.activate()
     }
     
     override func didDeactivate() {
+        super.didDeactivate()
     }
     
 }
